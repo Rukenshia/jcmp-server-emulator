@@ -1,0 +1,14 @@
+{
+  "name": "jcmp-server-emulator",
+  "version": "1.0.0",
+  "description": "JC3:MP Server Emulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jan Christophersen <jan.c@nanos.io>",
+  "license": "MIT",
+  "dependencies": {
+    "custom-logger": "^0.3.1"
+  }
+}
