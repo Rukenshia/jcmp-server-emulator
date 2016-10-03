@@ -9,7 +9,7 @@ global.log = require('custom-logger').new({
   error: { color: 'red', level: 3, event: 'ERROR' },
 }).config({ level: 0 });
 
-const stubs = require('../jcmp-stubs/index.js');
+const stubs = require('./jcmp-stubs/index.js');
 stubs._setup(function(k, v) {
     global[k] = v;
 });
@@ -72,14 +72,12 @@ function checkDependencies(name, info) {
 }
 
 files.forEach(file => {
-  console.log(file);
   const stat = fs.statSync(path.join('packages', file));
   if (!stat.isDirectory()) {
     log.warn(`non-directory ${file} found. skipping.`)
     return;
   }
 
-  console.log(file);
   const info = require(path.join(__dirname, '/packages/', file, 'package.json'));
 
   if (typeof info.jcmp_dependencies !== 'undefined') {

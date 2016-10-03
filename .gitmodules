@@ -1,0 +1,3 @@
+[submodule "jcmp-stubs"]
+	path = jcmp-stubs
+	url = git@gitlab.nanos.io:jc3mp-packages/stubs.git
