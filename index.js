@@ -9,12 +9,14 @@ global.log = require('custom-logger').new({
   error: { color: 'red', level: 3, event: 'ERROR' },
 }).config({ level: 0 });
 
+// load the jcmp-stubs module
 const stubs = require('./jcmp-stubs/index.js');
 stubs._setup(function(k, v) {
     global[k] = v;
 });
 log.info('jcmp-stubs loaded');
 
+// just... whatever.
 log.info('pretending to load client_packages directory');
 log.info('just imagine we would start some Networking now');
 log.info('loading packages');
@@ -29,6 +31,11 @@ const files = fs.readdirSync('./packages');
 const waiting = new Map();
 const packages = new Map();
 
+/**
+ * Loads a Package
+ * 
+ * @param {string} name - package name
+ */
 function loadPackage(name) {
   log.debug(`loading package ${name}`);
 
@@ -56,6 +63,14 @@ function loadPackage(name) {
 
 }
 
+/**
+ * Checks whether the dependencies of the package have been loaded. If all depdendencies
+ * are loaded, loadPackage will be called.
+ * 
+ * @param {string} name - package name
+ * @param {object} info - package info
+ * @param {Array<string>} info.jcmp_dependencies - jcmp dependencies
+ */
 function checkDependencies(name, info) {
   let allLoaded = true;
   info.jcmp_dependencies.forEach(dep => {

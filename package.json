@@ -4,11 +4,16 @@
   "description": "JC3:MP Server Emulator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json -t node_modules/docdash"
   },
   "author": "Jan Christophersen <jan.c@nanos.io>",
   "license": "MIT",
   "dependencies": {
     "custom-logger": "^0.3.1"
+  },
+  "devDependencies": {
+    "docdash": "^0.4.0",
+    "jsdoc": "^3.4.2"
   }
 }
