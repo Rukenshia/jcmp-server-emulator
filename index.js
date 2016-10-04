@@ -97,7 +97,7 @@ files.forEach(file => {
     return;
   }
 
-  const info = require(path.join(__dirname, '/packages/', file, 'package.json'));
+  const info = require(path.join(process.cwd(), '/packages/', file, 'package.json'));
 
   if (typeof info.jcmp_dependencies !== 'undefined') {
     waiting.set(file, info);
