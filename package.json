@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "JC3:MP Server Emulator",
   "main": "index.js",
+  "bin": {
+    "jcmp-server": "./index.js"
+  },
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json -t node_modules/docdash"
   },
