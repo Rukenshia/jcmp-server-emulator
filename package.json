@@ -8,7 +8,7 @@
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json -t node_modules/docdash"
   },
   "author": "Jan Christophersen <jan.c@nanos.io>",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "dependencies": {
     "custom-logger": "^0.3.1"
   },
