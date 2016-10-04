@@ -10,7 +10,8 @@
   "author": "Jan Christophersen <jan.c@nanos.io>",
   "license": "GPL-3.0",
   "dependencies": {
-    "custom-logger": "^0.3.1"
+    "custom-logger": "^0.3.1",
+    "jcmp-stubs": "^1.0.0"
   },
   "devDependencies": {
     "docdash": "^0.4.0",

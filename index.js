@@ -10,7 +10,7 @@ global.log = require('custom-logger').new({
 }).config({ level: 0 });
 
 // load the jcmp-stubs module
-const stubs = require('./jcmp-stubs/index.js');
+const stubs = require('jcmp-stubs');
 stubs._setup(function(k, v) {
     global[k] = v;
 });
