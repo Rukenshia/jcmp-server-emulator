@@ -50,7 +50,6 @@ class Emulator {
     }
 
     events.fakeCall('ClientConnected', client);
-    jcmp.players.push(player);
     events.fakeCall('PlayerCreated', player);
     
     setTimeout(() => {

@@ -17,7 +17,11 @@ stubs._setup(function(k, v) {
 log.info('jcmp-stubs loaded');
 
 const { Emulator } = require('./emulator');
-/** @type {Emulator} */ global.emulator = new Emulator(stubs);
+/** 
+ * @global
+ * @type {Emulator} 
+ */
+global.emulator = new Emulator(stubs);
 
 // just... whatever.
 log.info('pretending to load client_packages directory');
