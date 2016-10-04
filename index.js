@@ -4,9 +4,9 @@ const path = require('path');
 
 global.log = require('custom-logger').new({
   debug: { color: 'grey', level: 0, event: 'debug' },
-  info: { color: 'green', level: 1, event: 'info' },
-  warn: { color: 'yellow', level: 2, event: 'warning' },
-  error: { color: 'red', level: 3, event: 'ERROR' },
+  info: { color: 'green', level: 4, event: 'info' },
+  warn: { color: 'yellow', level: 5, event: 'warning' },
+  error: { color: 'red', level: 6, event: 'ERROR' },
 }).config({ level: 0 });
 
 // load the jcmp-stubs module
@@ -15,6 +15,9 @@ stubs._setup(function(k, v) {
     global[k] = v;
 });
 log.info('jcmp-stubs loaded');
+
+const { Emulator } = require('./emulator');
+/** @type {Emulator} */ global.emulator = new Emulator(stubs);
 
 // just... whatever.
 log.info('pretending to load client_packages directory');
@@ -49,10 +52,7 @@ function loadPackage(name) {
     packages.set(name, pkg);
 
     if (packages.size === files.length) {
-      setTimeout(() => {
-        log.info(`${packages.size} packages loaded.`)
-        log.info(`jcmp-server-emulator did its job. hf.`);
-      }, 500);
+      log.info(`${packages.size} packages loaded.`);
     }
   }));
   waiting.delete(name);
