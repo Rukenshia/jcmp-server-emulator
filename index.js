@@ -46,7 +46,7 @@ const packages = new Map();
 function loadPackage(name) {
   log.debug(`loading package ${name}`);
 
-  require(path.join(__dirname, '/packages/', name, 'main.js'));
+  require(path.join(process.cwd(), '/packages/', name, 'main.js'));
 
   log.debug(`package '${name}' loaded.`);
   events.fakeCall('PackageLoaded', stubs._helper.build('Package', ({ c: pkg, set }) => {
