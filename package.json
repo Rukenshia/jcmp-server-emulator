@@ -1,15 +1,15 @@
 {
   "name": "jcmp-server-emulator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JC3:MP Server Emulator",
-  "main": "index.js",
+  "main": "./index.js",
   "bin": {
-    "jcmp-server": "./index.js"
+    "jcmp-server": "./bin/jcmp-server.js"
   },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json -t node_modules/docdash"
+    "generate-docs": "jsdoc -c jsdoc.json -t node_modules/docdash"
   },
   "author": "Jan Christophersen <jan.c@nanos.io>",
   "license": "GPL-3.0",
@@ -20,5 +20,9 @@
   "devDependencies": {
     "docdash": "^0.4.0",
     "jsdoc": "^3.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/Rukenshia/jcmp-server-emulator.git"
   }
 }
