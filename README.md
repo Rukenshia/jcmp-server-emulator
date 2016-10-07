@@ -12,6 +12,7 @@ Install the package using `npm`:
 make sure to have all packages in a directory named `packages`, then run
 ```node_modules/.bin/jcmp-server```
 
+
 Alternatively, install the package globally:
 ```npm i -g jcmp-server-emulator```
 
