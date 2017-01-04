@@ -9,10 +9,94 @@ global.log = require('custom-logger').new({
   error: { color: 'red', level: 6, event: 'ERROR' },
 }).config({ level: 0 });
 
+const typeHints = {
+  // Special Conversions
+  'RGB': [
+    'SRGB'
+  ],
+  'Player': [
+    'IPlayer',
+  ],
+  'LocalPlayer': [
+    /class LocalPlayerScripting( * __ptr64)?/,
+  ],
+  'World': [
+    /class WorldScripting( * __ptr64)?/,
+  ],
+  'Camera': [
+    /class CameraScripting( * __ptr64)?/,
+  ],
+  'Texture': [
+    'class ScriptingTexture',
+  ],
+  'Vector2': [
+    /class math::basic_vector2<int>/,
+    /SVector2/,
+  ],
+  'Vector2f': [
+    /class math::basic_vector2<float>/,
+    /SVector2f/,
+  ],
+  'Vector3': [
+    /class math::basic_vector3<int>/,
+    /SVector3.*/,
+  ],
+  'Vector3f': [
+    /class math::basic_vector3<float>/,
+    /SVector3f/,
+  ],
+  'Vector4': [
+    /SVector4/,
+  ],
+  'Vector4f': [
+    'struct glm::tvec4<float,0>',
+    /SVector4f/,
+  ],
+  'Matrix': [
+    /(class|struct) (math|glm)::t?mat(rix|4x4)?<.*>/,
+    'class SMatrix',
+  ],
+  'JCMPNamespace': [
+    /public: (.*?)::JCMPScriptNamespace \* __ptr64/,
+  ],
+  'JCMPUINamespace': [
+    /public: (.*?)::JCMPUINamespace \* __ptr64/,
+  ],
+  'Array': [
+    /class std::vector<(.*?)>/,
+  ],
+  'any': [
+    'class scr::ScriptArg',
+    'class scr::ScriptValue',
+  ],
+  'unknown': [
+    '?',
+  ],
+  'Entity': [
+    'ISyncableEntity',
+    /class ISyncableEntity( * __ptr64)?/,
+  ],
+  'PlayerNameTag': [
+    /class Nametag( * __ptr64)?/,
+  ],
+  'Settings': [
+    /class SettingsScripting( * __ptr64)?/,
+  ],
+  'Renderer': [
+    'scriptingRenderer',
+  ],
+};
+
 // load the jcmp-stubs module
-const stubs = require('jcmp-stubs');
-stubs._setup(function(k, v) {
-    global[k] = v;
+const { ClassHelper, ClassBuilder, EventSystem, _setup } = require('jcmp-stubs');
+const cb = ClassBuilder.fromDataObject(require('./data/data_server.json'), typeHints);
+const events = require('./data/events_server.json');
+events.push(...require('./data/events_modules.json'));
+const eventSystem = new EventSystem(cb, events);
+
+// setup
+_setup(cb, eventSystem, (k, v) => {
+  global[k] = v;
 });
 log.info('jcmp-stubs loaded');
 
@@ -21,7 +105,7 @@ const { Emulator } = require('./emulator');
  * @global
  * @type {Emulator} 
  */
-global.emulator = new Emulator(stubs);
+global.emulator = new Emulator(cb);
 
 // just... whatever.
 log.info('pretending to load client_packages directory');
@@ -49,7 +133,7 @@ function loadPackage(name) {
   require(path.join(process.cwd(), '/packages/', name, 'main.js'));
 
   log.debug(`package '${name}' loaded.`);
-  events.fakeCall('PackageLoaded', stubs._helper.build('Package', ({ c: pkg, set }) => {
+  jcmp.events.fakeCall('PackageLoaded', ClassHelper.build(cb, 'Package', ({ c: pkg, set }) => {
     set('name', name);
     set('valid', true);
     set('dir', path.join('./packages', name));

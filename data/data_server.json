@@ -1,0 +1,1135 @@
+[{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector4",
+"functions": [
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "w", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector2f",
+"functions": [
+{
+"name": "mul", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+},
+{
+"name": "div", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+},
+{
+"name": "sub", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+},
+{
+"name": "add", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+}
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": true,
+"name": "JCMPNamespace",
+"functions": [
+],
+"properties": [
+{
+"name": "packages", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "events", 
+"isWriteable": false,
+"type": "class scr::IEventSystem * __ptr64"
+},
+{
+"name": "server", 
+"isWriteable": false,
+"type": "class Server * __ptr64"
+},
+{
+"name": "networkVersion", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "players", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "vehicles", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "objects", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "poi", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "checkpoints", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector3",
+"functions": [
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Package",
+"functions": [
+{
+"name": "Start", 
+"returnType": "bool",
+"args": [
+]
+},
+{
+"name": "Stop", 
+"returnType": "void",
+"args": [
+]
+}
+],
+"properties": [
+{
+"name": "name", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "dir", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "valid", 
+"isWriteable": false,
+"type": "bool"
+},
+{
+"name": "config", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "EventSystem",
+"functions": [
+{
+"name": "Add", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::shared_ptr<class scr::IScriptFunction>"
+]
+},
+{
+"name": "Call", 
+"returnType": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::vector<class scr::ScriptArg,class std::allocator<class scr::ScriptArg> >"
+]
+},
+{
+"name": "AddRemoteCallable", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::shared_ptr<class scr::IScriptFunction>"
+]
+},
+{
+"name": "CallRemote", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class ISyncableEntity * __ptr64",
+"class std::vector<class scr::ScriptArg,class std::allocator<class scr::ScriptArg> >"
+]
+}
+],
+"properties": [
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "RGB",
+"functions": [
+],
+"properties": [
+{
+"name": "r", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "g", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "b", 
+"isWriteable": true,
+"type": "int"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": false,
+"canHaveCustomProperties": true,
+"name": "Checkpoint",
+"functions": [
+{
+"name": "Destroy", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "SetVisibleForPlayer", 
+"returnType": "void",
+"args": [
+"class IPlayer * __ptr64",
+"bool"
+]
+},
+{
+"name": "IsVisibleForPlayer", 
+"returnType": "bool",
+"args": [
+"class IPlayer * __ptr64"
+]
+}
+],
+"properties": [
+{
+"name": "modelHash", 
+"isWriteable": true,
+"type": "unsigned int"
+},
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "rotation", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "radius", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "visible", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "dimension", 
+"isWriteable": true,
+"type": "unsigned int"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector3f",
+"functions": [
+{
+"name": "mul", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+},
+{
+"name": "div", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+},
+{
+"name": "sub", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+},
+{
+"name": "add", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+}
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "RGBA",
+"functions": [
+],
+"properties": [
+{
+"name": "r", 
+"isWriteable": false,
+"type": "unsigned char"
+},
+{
+"name": "g", 
+"isWriteable": false,
+"type": "unsigned char"
+},
+{
+"name": "b", 
+"isWriteable": false,
+"type": "unsigned char"
+},
+{
+"name": "a", 
+"isWriteable": false,
+"type": "unsigned char"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector2",
+"functions": [
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Matrix",
+"functions": [
+{
+"name": "Transpose", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+]
+},
+{
+"name": "Scale", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "Rotate", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"float",
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "Translate", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "LookAt", 
+"returnType": "class math::matrix<float>",
+"args": [
+"class math::basic_vector3<float>",
+"class math::basic_vector3<float>",
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "mul", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+},
+{
+"name": "div", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+},
+{
+"name": "sub", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+},
+{
+"name": "add", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+}
+],
+"properties": [
+{
+"name": "position", 
+"isWriteable": false,
+"type": "class math::basic_vector3<float>"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector4f",
+"functions": [
+{
+"name": "mul", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+},
+{
+"name": "div", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+},
+{
+"name": "sub", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+},
+{
+"name": "add", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+}
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "w", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Argument",
+"functions": [
+],
+"properties": [
+{
+"name": "key", 
+"isWriteable": true,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "value", 
+"isWriteable": true,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Server",
+"functions": [
+{
+"name": "Stop", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "Restart", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "AddInputHandler", 
+"returnType": "void",
+"args": [
+"class std::shared_ptr<class scr::IScriptFunction>"
+]
+},
+{
+"name": "UpdateClientPackage", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+}
+],
+"properties": [
+{
+"name": "args", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "config", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "currentTickRate", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "clients", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": false,
+"canHaveCustomProperties": true,
+"name": "GameObject",
+"functions": [
+{
+"name": "Destroy", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "ApplyForce", 
+"returnType": "void",
+"args": [
+"class math::basic_vector3<float>",
+"float"
+]
+}
+],
+"properties": [
+{
+"name": "model", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "rotation", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "dimension", 
+"isWriteable": true,
+"type": "unsigned int"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": true,
+"name": "RemoteClient",
+"functions": [
+{
+"name": "Kick", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "DoesOwnDLC", 
+"returnType": "bool",
+"args": [
+"int"
+]
+}
+],
+"properties": [
+{
+"name": "name", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "ipAddress", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "ping", 
+"isWriteable": false,
+"type": "int"
+},
+{
+"name": "steamId", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "steamAuthenticated", 
+"isWriteable": false,
+"type": "bool"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": true,
+"name": "Player",
+"functions": [
+{
+"name": "Kick", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "Respawn", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "GiveWeapon", 
+"returnType": "class PlayerWeapon * __ptr64",
+"args": [
+"unsigned int",
+"unsigned int",
+"bool"
+]
+}
+],
+"properties": [
+{
+"name": "client", 
+"isWriteable": false,
+"type": "class IRemoteClient * __ptr64"
+},
+{
+"name": "name", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "health", 
+"isWriteable": true,
+"type": "short"
+},
+{
+"name": "invulnerable", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "respawnPosition", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "rotation", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "aimPosition", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "weapons", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "selectedWeapon", 
+"isWriteable": false,
+"type": "class PlayerWeapon * __ptr64"
+},
+{
+"name": "model", 
+"isWriteable": true,
+"type": "unsigned int"
+},
+{
+"name": "dimension", 
+"isWriteable": true,
+"type": "unsigned int"
+},
+{
+"name": "vehicle", 
+"isWriteable": false,
+"type": "class Vehicle * __ptr64"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "PlayerWeapon",
+"functions": [
+],
+"properties": [
+{
+"name": "modelHash", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "slotIndex", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "magazineAmmo", 
+"isWriteable": true,
+"type": "unsigned int"
+},
+{
+"name": "reserveAmmo", 
+"isWriteable": true,
+"type": "unsigned int"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": false,
+"canHaveCustomProperties": true,
+"name": "Vehicle",
+"functions": [
+{
+"name": "Destroy", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "SetOccupant", 
+"returnType": "void",
+"args": [
+"unsigned char",
+"class ISyncableEntity * __ptr64"
+]
+},
+{
+"name": "GetOccupant", 
+"returnType": "class ISyncableEntity * __ptr64",
+"args": [
+"unsigned char"
+]
+},
+{
+"name": "Repair", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "Respawn", 
+"returnType": "void",
+"args": [
+]
+}
+],
+"properties": [
+{
+"name": "driver", 
+"isWriteable": true,
+"type": "class ISyncableEntity * __ptr64"
+},
+{
+"name": "modelHash", 
+"isWriteable": true,
+"type": "unsigned int"
+},
+{
+"name": "health", 
+"isWriteable": true,
+"type": "short"
+},
+{
+"name": "destroyed", 
+"isWriteable": false,
+"type": "bool"
+},
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "aimPosition", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "rotation", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "linearVelocity", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "angularVelocity", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "primaryColor", 
+"isWriteable": true,
+"type": "short"
+},
+{
+"name": "dimension", 
+"isWriteable": true,
+"type": "unsigned int"
+},
+{
+"name": "nitroEnabled", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "turboJumpEnabled", 
+"isWriteable": true,
+"type": "bool"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": false,
+"canHaveCustomProperties": true,
+"name": "POI",
+"functions": [
+{
+"name": "Destroy", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "SetVisibleForPlayer", 
+"returnType": "void",
+"args": [
+"class IPlayer * __ptr64",
+"bool"
+]
+},
+{
+"name": "IsVisibleForPlayer", 
+"returnType": "bool",
+"args": [
+"class IPlayer * __ptr64"
+]
+}
+],
+"properties": [
+{
+"name": "type", 
+"isWriteable": true,
+"type": "unsigned int"
+},
+{
+"name": "progress", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "progressMax", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "minDistance", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "maxDistance", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "text", 
+"isWriteable": true,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "visible", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "flashing", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "clampedToScreen", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "dimension", 
+"isWriteable": true,
+"type": "unsigned int"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": false,
+"canHaveCustomProperties": false,
+"name": "global",
+"functions": [
+],
+"properties": [
+{
+"name": "jcmp", 
+"isWriteable": false,
+"type": "struct `public: void __cdecl Server::Initialize(int,char const * __ptr64 * __ptr64 const) __ptr64'::`2'::JCMPScriptNamespace * __ptr64"
+}
+]
+}]

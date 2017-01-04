@@ -1,0 +1,1037 @@
+[{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "EventSystem",
+"functions": [
+{
+"name": "Add", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::shared_ptr<class scr::IScriptFunction>"
+]
+},
+{
+"name": "Call", 
+"returnType": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::vector<class scr::ScriptArg,class std::allocator<class scr::ScriptArg> >"
+]
+},
+{
+"name": "AddRemoteCallable", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::shared_ptr<class scr::IScriptFunction>"
+]
+},
+{
+"name": "CallRemote", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::vector<class scr::ScriptArg,class std::allocator<class scr::ScriptArg> >"
+]
+}
+],
+"properties": [
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Renderer",
+"functions": [
+{
+"name": "EnableCulling", 
+"returnType": "void",
+"args": [
+"bool"
+]
+},
+{
+"name": "SetTransform", 
+"returnType": "void",
+"args": [
+"class math::matrix<float>"
+]
+},
+{
+"name": "DrawText", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class math::basic_vector3<float>",
+"class math::basic_vector2<float>",
+"struct RGBA",
+"float",
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "MeasureText", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"float",
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "DrawRect", 
+"returnType": "void",
+"args": [
+"class scr::ScriptArg",
+"class math::basic_vector2<float>",
+"struct RGBA"
+]
+},
+{
+"name": "DrawLine", 
+"returnType": "void",
+"args": [
+"class scr::ScriptArg",
+"class scr::ScriptArg",
+"struct RGBA"
+]
+},
+{
+"name": "DrawTexture", 
+"returnType": "void",
+"args": [
+"class ScriptingTexture",
+"class std::vector<class scr::ScriptArg,class std::allocator<class scr::ScriptArg> >"
+]
+}
+],
+"properties": [
+{
+"name": "viewportSize", 
+"isWriteable": false,
+"type": "class math::basic_vector2<float>"
+},
+{
+"name": "dtf", 
+"isWriteable": false,
+"type": "float"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "RGBA",
+"functions": [
+],
+"properties": [
+{
+"name": "r", 
+"isWriteable": false,
+"type": "unsigned char"
+},
+{
+"name": "g", 
+"isWriteable": false,
+"type": "unsigned char"
+},
+{
+"name": "b", 
+"isWriteable": false,
+"type": "unsigned char"
+},
+{
+"name": "a", 
+"isWriteable": false,
+"type": "unsigned char"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector3f",
+"functions": [
+{
+"name": "mul", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+},
+{
+"name": "div", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+},
+{
+"name": "sub", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+},
+{
+"name": "add", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"class SVector3f"
+]
+}
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": false,
+"canHaveCustomProperties": false,
+"name": "WebUIWindow",
+"functions": [
+{
+"name": "Destroy", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "BringToFront", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "Reload", 
+"returnType": "void",
+"args": [
+"bool"
+]
+}
+],
+"properties": [
+{
+"name": "size", 
+"isWriteable": true,
+"type": "class math::basic_vector2<int>"
+},
+{
+"name": "location", 
+"isWriteable": true,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "hidden", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector2<int>"
+},
+{
+"name": "autoResize", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "captureMouseInput", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "texture", 
+"isWriteable": false,
+"type": "class ScriptingTexture"
+},
+{
+"name": "autoRenderTexture", 
+"isWriteable": true,
+"type": "bool"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "RGB",
+"functions": [
+],
+"properties": [
+{
+"name": "r", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "g", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "b", 
+"isWriteable": true,
+"type": "int"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Texture",
+"functions": [
+],
+"properties": [
+{
+"name": "baseColor", 
+"isWriteable": true,
+"type": "struct RGBA"
+},
+{
+"name": "size", 
+"isWriteable": true,
+"type": "class math::basic_vector2<float>"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": true,
+"name": "JCMPNamespace",
+"functions": [
+{
+"name": "print", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "printLog", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+}
+],
+"properties": [
+{
+"name": "packages", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "events", 
+"isWriteable": false,
+"type": "class scr::IEventSystem * __ptr64"
+},
+{
+"name": "networkVersion", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "ui", 
+"isWriteable": false,
+"type": "struct `public: __cdecl ClientScripting::ClientScripting(void) __ptr64'::`2'::JCMPUINamespace * __ptr64"
+},
+{
+"name": "viewportSize", 
+"isWriteable": false,
+"type": "class math::basic_vector2<float>"
+},
+{
+"name": "localPlayer", 
+"isWriteable": false,
+"type": "class LocalPlayerScripting * __ptr64"
+},
+{
+"name": "players", 
+"isWriteable": false,
+"type": "class std::vector<class scr::ScriptValue,class std::allocator<class scr::ScriptValue> >"
+},
+{
+"name": "world", 
+"isWriteable": false,
+"type": "class WorldScripting * __ptr64"
+},
+{
+"name": "settings", 
+"isWriteable": false,
+"type": "class SettingsScripting * __ptr64"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Package",
+"functions": [
+{
+"name": "Start", 
+"returnType": "bool",
+"args": [
+]
+},
+{
+"name": "Stop", 
+"returnType": "void",
+"args": [
+]
+}
+],
+"properties": [
+{
+"name": "name", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "dir", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "valid", 
+"isWriteable": false,
+"type": "bool"
+},
+{
+"name": "config", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector2",
+"functions": [
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": true,
+"name": "JCMPUINamespace",
+"functions": [
+{
+"name": "AddEvent", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::shared_ptr<class scr::IScriptFunction>"
+]
+},
+{
+"name": "CallEvent", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class std::vector<class scr::ScriptArg,class std::allocator<class scr::ScriptArg> >"
+]
+}
+],
+"properties": [
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector4",
+"functions": [
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "w", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector2f",
+"functions": [
+{
+"name": "mul", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+},
+{
+"name": "div", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+},
+{
+"name": "sub", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+},
+{
+"name": "add", 
+"returnType": "class math::basic_vector2<float>",
+"args": [
+"class SVector2f"
+]
+}
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector3",
+"functions": [
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "int"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Matrix",
+"functions": [
+{
+"name": "Transpose", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+]
+},
+{
+"name": "Scale", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "Rotate", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"float",
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "Translate", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "LookAt", 
+"returnType": "class math::matrix<float>",
+"args": [
+"class math::basic_vector3<float>",
+"class math::basic_vector3<float>",
+"class math::basic_vector3<float>"
+]
+},
+{
+"name": "mul", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+},
+{
+"name": "div", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+},
+{
+"name": "sub", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+},
+{
+"name": "add", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"class SMatrix"
+]
+}
+],
+"properties": [
+{
+"name": "position", 
+"isWriteable": false,
+"type": "class math::basic_vector3<float>"
+}
+]
+},
+{
+"isConstructible": true,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Vector4f",
+"functions": [
+{
+"name": "mul", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+},
+{
+"name": "div", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+},
+{
+"name": "sub", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+},
+{
+"name": "add", 
+"returnType": "struct glm::tvec4<float,0>",
+"args": [
+"class SVector4f"
+]
+}
+],
+"properties": [
+{
+"name": "x", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "y", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "z", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "w", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "length", 
+"isWriteable": false,
+"type": "double"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "LocalPlayer",
+"functions": [
+{
+"name": "SetAbilityEnabled", 
+"returnType": "void",
+"args": [
+"unsigned int",
+"bool"
+]
+},
+{
+"name": "IsAbilityEnabled", 
+"returnType": "bool",
+"args": [
+"unsigned int"
+]
+},
+{
+"name": "CallGameEvent", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "GetRenderPosition", 
+"returnType": "class math::basic_vector3<float>",
+"args": [
+"float"
+]
+},
+{
+"name": "GetRenderTransform", 
+"returnType": "class math::matrix<float>",
+"args": [
+"float"
+]
+},
+{
+"name": "GetBoneTransform", 
+"returnType": "struct glm::tmat4x4<float,0>",
+"args": [
+"unsigned int",
+"float"
+]
+}
+],
+"properties": [
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "rotation", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "camera", 
+"isWriteable": false,
+"type": "class CameraScripting * __ptr64"
+},
+{
+"name": "frozen", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "controlsEnabled", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "baseState", 
+"isWriteable": true,
+"type": "unsigned int"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "NetworkPlayer",
+"functions": [
+{
+"name": "GetBoneTransform", 
+"returnType": "class math::matrix<float>",
+"args": [
+"unsigned int",
+"float"
+]
+},
+{
+"name": "GetRenderTransform", 
+"returnType": "class math::matrix<float>",
+"args": [
+"float"
+]
+}
+],
+"properties": [
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
+},
+{
+"name": "name", 
+"isWriteable": false,
+"type": "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+},
+{
+"name": "health", 
+"isWriteable": false,
+"type": "float"
+},
+{
+"name": "maxHealth", 
+"isWriteable": false,
+"type": "float"
+},
+{
+"name": "localPlayer", 
+"isWriteable": false,
+"type": "bool"
+},
+{
+"name": "position", 
+"isWriteable": false,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "rotation", 
+"isWriteable": false,
+"type": "class math::basic_vector3<float>"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "World",
+"functions": [
+{
+"name": "SetTime", 
+"returnType": "void",
+"args": [
+"unsigned char",
+"unsigned char"
+]
+},
+{
+"name": "ResetSunPosition", 
+"returnType": "void",
+"args": [
+]
+}
+],
+"properties": [
+{
+"name": "weather", 
+"isWriteable": true,
+"type": "unsigned char"
+},
+{
+"name": "weatherVisible", 
+"isWriteable": true,
+"type": "bool"
+},
+{
+"name": "moonColor", 
+"isWriteable": true,
+"type": "struct RGBA"
+},
+{
+"name": "sunPosition", 
+"isWriteable": true,
+"type": "class math::basic_vector2<float>"
+},
+{
+"name": "sunHDRScale", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "sunColor", 
+"isWriteable": true,
+"type": "struct RGBA"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": true,
+"canHaveCustomProperties": false,
+"name": "Camera",
+"functions": [
+],
+"properties": [
+{
+"name": "position", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "rotation", 
+"isWriteable": true,
+"type": "class math::basic_vector3<float>"
+},
+{
+"name": "fieldOfView", 
+"isWriteable": true,
+"type": "float"
+},
+{
+"name": "attachedToPlayer", 
+"isWriteable": true,
+"type": "bool"
+}
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": false,
+"canHaveCustomProperties": false,
+"name": "Settings",
+"functions": [
+{
+"name": "Destroy", 
+"returnType": "void",
+"args": [
+]
+},
+{
+"name": "Set", 
+"returnType": "void",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >",
+"class scr::ScriptArg"
+]
+},
+{
+"name": "Get", 
+"returnType": "class scr::ScriptValue",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "Exists", 
+"returnType": "bool",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+},
+{
+"name": "Delete", 
+"returnType": "bool",
+"args": [
+"class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >"
+]
+}
+],
+"properties": [
+]
+},
+{
+"isConstructible": false,
+"isAutoDestroy": false,
+"canHaveCustomProperties": false,
+"name": "global",
+"functions": [
+],
+"properties": [
+{
+"name": "jcmp", 
+"isWriteable": false,
+"type": "struct `public: __cdecl ClientScripting::ClientScripting(void) __ptr64'::`2'::JCMPScriptNamespace * __ptr64"
+}
+]
+}]

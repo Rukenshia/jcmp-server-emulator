@@ -1,5 +1,6 @@
 'use strict';
 
+const { ClassHelper, _log } = require('jcmp-stubs');
 /**
  * The Emulator Class provides various helper functions to imitate the JC3:MP Server.
  */
@@ -7,13 +8,10 @@ class Emulator {
   /**
    * Creates a new Emulator instance
    * 
-   * @param {jcmp-stubs} stubs
-   * @param {custom-logger} stubs._log
-   * @param {ClassHelper} stubs._helper
+   * @param {ClassBuilder} classBuilder
    */
-  constructor({ _helper, _log }) {
-    this.helper = _helper;
-    this.log = _log;
+  constructor(classBuilder) {
+    this.builder = classBuilder;
   }
 
   /**
@@ -27,30 +25,30 @@ class Emulator {
   }
 
   /**
-   * Creates a new fake Player. This function calls all the events as if a 'normal' player connected.
+   * Creates a new fake Player. This function calls all the jcmp.events as if a 'normal' player connected.
    * 
    * @param {string} [name='JC3:MP Player']
    */
   createFakePlayer(name = 'JC3:MP Player') {
-    const client = this.helper.build('RemoteClient', ({ set }) => {
+    const client = ClassHelper.build(this.builder, 'RemoteClient', ({ set }) => {
       set('ipAddress', '127.0.0.1');
       set('name', name);
       set('steamId', `76${Math.floor((Math.random() * 99999999999999) + 1000000000000000)}`);
       set('steamAuthenticated', true);
     });
-    const player = this.helper.build('Player', ({ c: p, set }) => {
+    const player = ClassHelper.build(this.builder, 'Player', ({ c: p, set }) => {
       set('name', name);
       set('client', client);
     });
 
-    const retns = events.fakeCall('ClientConnectRequest', name, '127.0.0.1');
+    const retns = jcmp.events.fakeCall('ClientConnectRequest', name, '127.0.0.1');
     if (retns.some(b => b === false)) {
       log.debug(`ClientConnectRequest has been denied`);
       return;
     }
 
-    events.fakeCall('ClientConnected', client);
-    events.fakeCall('PlayerCreated', player);
+    jcmp.events.fakeCall('ClientConnected', client);
+    jcmp.events.fakeCall('PlayerCreated', player);
     
     setTimeout(() => {
       if (player.__metadata.destroyed) {
@@ -58,7 +56,7 @@ class Emulator {
         return;
       }
       log.debug(`firing PlayerReady`);
-      events.fakeCall('PlayerReady', player);
+      jcmp.events.fakeCall('PlayerReady', player);
     }, Math.floor(Math.random() * 1000) + 100);
   }
 
@@ -68,8 +66,8 @@ class Emulator {
    * @param {Player} player
    */
   disconnectFakePlayer(player) {
-    events.fakeCall('PlayerDestroyed', player);
-    events.fakeCall('ClientDisconnected', player.client);
+    jcmp.events.fakeCall('PlayerDestroyed', player);
+    jcmp.events.fakeCall('ClientDisconnected', player.client);
     player.__metadata.destroyed = true;
     jcmp.players.splice(jcmp.players.indexOf(player), 1);
   }

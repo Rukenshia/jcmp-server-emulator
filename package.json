@@ -1,6 +1,6 @@
 {
   "name": "jcmp-server-emulator",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "JC3:MP Server Emulator",
   "main": "./index.js",
   "bin": {
@@ -15,7 +15,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "custom-logger": "^0.3.1",
-    "jcmp-stubs": "^1.0.0"
+    "jcmp-stubs": "2.6.0"
   },
   "devDependencies": {
     "docdash": "^0.4.0",
