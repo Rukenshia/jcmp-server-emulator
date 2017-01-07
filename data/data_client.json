@@ -828,6 +828,11 @@
 "name": "baseState", 
 "isWriteable": true,
 "type": "unsigned int"
+},
+{
+"name": "networkId", 
+"isWriteable": false,
+"type": "unsigned int"
 }
 ]
 },
