@@ -1,6 +1,6 @@
 {
   "name": "jcmp-server-emulator",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "JC3:MP Server Emulator",
   "main": "./index.js",
   "bin": {
